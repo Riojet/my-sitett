@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>LearnLab — Курси та Навчальний Центр (Демо)</title>
+<style>
+:root{
+  --bg:#f7fbff; --card:#ffffff; --muted:#6b7280; --accent:#0f62fe; --accent2:#06b6d4;
+  --glass: rgba(255,255,255,0.7);
+  --radius:12px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#071233;background:linear-gradient(180deg,#f7fbff,#eef6ff);-webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+header{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+nav a{margin-left:14px;color:var(--muted);text-decoration:none;font-weight:700}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;padding:34px 0}
+.hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85));padding:22px;border-radius:14px;box-shadow:0 12px 40px rgba(12,24,50,0.06)}
+.h1{font-size:30px;margin:6px 0 10px}
+.lead{color:var(--muted);margin:0 0 14px}
+.cta{display:flex;gap:10px;margin-top:12px}
+.btn{padding:10px 14px;border-radius:10px;border:0;font-weight:800;cursor:pointer}
+.btn.primary{background:var(--accent);color:white;box-shadow:0 10px 30px rgba(15,98,254,0.12)}
+.btn.ghost{background:transparent;border:2px solid rgba(15,98,254,0.08);color:var(--accent)}
+
+/* features */
+.features{display:flex;gap:12px;margin-top:18px}
+.feature{flex:1;background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 30px rgba(12,24,50,0.04);display:flex;gap:12px;align-items:center}
+.icon{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;box-shadow:0 8px 20px rgba(12,24,50,0.06)}
+
+/* courses grid */
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.course{background:linear-gradient(180deg,#fff,#f8fdff);padding:14px;border-radius:12px;border:1px solid rgba(6,10,30,0.03);transition:transform .28s, box-shadow .28s;cursor:pointer}
+.course:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(6,10,30,0.06)}
+
+/* instructors */
+.instructors{display:flex;gap:12px;margin-top:22px}
+.instructor{flex:1;background:var(--card);border-radius:12px;padding:12px;text-align:center;box-shadow:0 8px 30px rgba(12,24,50,0.04)}
+
+/* testimonials */
+.testimonials{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.test{background:linear-gradient(180deg,#fff,#f8fdff);padding:12px;border-radius:12px;}
+
+/* pricing */
+.pricing{display:flex;gap:12px;margin-top:18px}
+.plan{flex:1;background:white;padding:14px;border-radius:12px;border:1px solid rgba(6,10,30,0.03);text-align:center}
+.plan.recommended{box-shadow:0 20px 60px rgba(15,98,254,0.08);transform:scale(1.02)}
+
+/* contact */
+.contact{display:flex;gap:18px;margin-top:20px;align-items:flex-start}
+.form{flex:1;background:linear-gradient(180deg,#fff,#f2fbff);padding:14px;border-radius:12px}
+.map{min-width:260px;background:linear-gradient(180deg,#fff,#f8fdff);padding:12px;border-radius:12px;text-align:center;color:var(--muted)}
+
+/* footer */
+footer{margin-top:30px;padding:18px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+/* small animations */
+.fade-in-up{opacity:0;transform:translateY(14px);transition:opacity .7s ease-out, transform .7s ease-out}
+.fade-in-up.visible{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;padding:12px 0}
+  .courses{grid-template-columns:1fr 1fr}
+  .testimonials{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  .courses{grid-template-columns:1fr}
+  .features{flex-direction:column}
+  nav a{display:none}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="brand">
+      <div class="logo">LL</div>
+      <div>
+        <div style="font-weight:800">LearnLab</div>
+        <div style="font-size:12px;color:var(--muted)">Курси. Навчальний центр</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#courses">Курси</a>
+      <a href="#instructors">Викладачі</a>
+      <a href="#prices">Ціни</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero fade-in-up">
+      <div class="hero-card">
+        <div style="font-weight:800;color:var(--accent2)">Запуск набору: Обмежені місця</div>
+        <h1 class="h1">Підніми свої навички — знайди роботу мрії</h1>
+        <p class="lead">Інтенсивні курси з веб-розробки, дизайну, маркетингу та технічних професій. Практика, портфоліо та допомога з працевлаштуванням.</p>
+        <div class="cta">
+          <button class="btn primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Записатися</button>
+          <button class="btn ghost" onclick="showPrograms()">Див. програми</button>
+        </div>
+
+        <div class="features" style="margin-top:18px">
+          <div class="feature">
+            <div class="icon">🎓</div>
+            <div>
+              <div style="font-weight:800">Практика</div>
+              <div style="color:var(--muted);font-size:13px">Проєкти для портфоліо</div>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon">💼</div>
+            <div>
+              <div style="font-weight:800">Кар'єрна підтримка</div>
+              <div style="color:var(--muted);font-size:13px">Резюме, інтерв'ю</div>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon">⏱️</div>
+            <div>
+              <div style="font-weight:800">Гнучкий графік</div>
+              <div style="color:var(--muted);font-size:13px">Вечірні та денні групи</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="z-index:2;position:relative">
+        <!-- Inline SVG placeholder for hero image (offline-friendly) -->
+        <div style="width:420px;border-radius:12px;overflow:hidden;box-shadow:0 20px 40px rgba(12,24,50,0.06)">
+          <svg width="100%" height="320" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hero image">
+            <rect width="100%" height="100%" rx="12" fill="#e8f7ff"/>
+            <g transform="translate(40,40)" fill="#0f62fe">
+              <rect x="0" y="0" width="260" height="160" rx="8" fill="#0f62fe" opacity="0.08"/>
+              <rect x="300" y="20" width="360" height="120" rx="8" fill="#06b6d4" opacity="0.06"/>
+              <text x="20" y="110" font-size="28" fill="#024" font-family="Arial">LearnLab — demo</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="courses fade-in-up">
+      <div class="course">
+        <div style="font-weight:800">Веб-розробка (Frontend)</div>
+        <div style="color:var(--muted);font-size:13px;margin-top:6px">HTML, CSS, JS, React — від 0 до портфоліо за 3 місяці</div>
+      </div>
+      <div class="course">
+        <div style="font-weight:800">UI/UX Дизайн</div>
+        <div style="color:var(--muted);font-size:13px;margin-top:6px">Figma, прототипування, тестування інтерфейсів</div>
+      </div>
+      <div class="course">
+        <div style="font-weight:800">Digital-маркетинг</div>
+        <div style="color:var(--muted);font-size:13px;margin-top:6px">Реклама, аналітика, SMM</div>
+      </div>
+      <div class="course">
+        <div style="font-weight:800">UI/UX Дизайн Pro</div>
+        <div style="color:var(--muted);font-size:13px;margin-top:6px">Проєктна робота + менторство</div>
+      </div>
+      <div class="course">
+        <div style="font-weight:800">CNC & Maker Skills</div>
+        <div style="color:var(--muted);font-size:13px;margin-top:6px">Вступ до фізичного прототипування</div>
+      </div>
+      <div class="course">
+        <div style="font-weight:800">Автоматизація бізнесу</div>
+        <div style="color:var(--muted);font-size:13px;margin-top:6px">CRM, боти, інтеграції</div>
+      </div>
+    </section>
+
+    <section id="instructors" class="instructors fade-in-up">
+      <div class="instructor">
+        <!-- SVG avatar -->
+        <svg width="100" height="100" viewBox="0 0 100 100" style="margin:0 auto;display:block">
+          <rect rx="18" width="100" height="100" fill="#eef7ff"/>
+          <text x="50" y="57" text-anchor="middle" font-size="28" fill="#024">А</text>
+        </svg>
+        <div style="font-weight:800;margin-top:8px">Анна Петрова</div>
+        <div style="color:var(--muted);font-size:13px">Викладач фронтенд</div>
+      </div>
+      <div class="instructor">
+        <svg width="100" height="100" viewBox="0 0 100 100" style="margin:0 auto;display:block">
+          <rect rx="18" width="100" height="100" fill="#fff7f0"/>
+          <text x="50" y="57" text-anchor="middle" font-size="28" fill="#b04">В</text>
+        </svg>
+        <div style="font-weight:800;margin-top:8px">Віталій Коваль</div>
+        <div style="color:var(--muted);font-size:13px">Ментор UI/UX</div>
+      </div>
+      <div class="instructor">
+        <svg width="100" height="100" viewBox="0 0 100 100" style="margin:0 auto;display:block">
+          <rect rx="18" width="100" height="100" fill="#eefaf0"/>
+          <text x="50" y="57" text-anchor="middle" font-size="28" fill="#0a5">Д</text>
+        </svg>
+        <div style="font-weight:800;margin-top:8px">Дмитро Орел</div>
+        <div style="color:var(--muted);font-size:13px">Практичний тренер</div>
+      </div>
+    </section>
+
+    <section class="testimonials fade-in-up">
+      <div class="test">
+        <div style="font-weight:800">"Після курсу я отримав першу роботу — та ще й з віддаленим графіком!"</div>
+        <div style="color:var(--muted);font-size:13px;margin-top:8px">— Олег</div>
+      </div>
+      <div class="test">
+        <div style="font-weight:800">"Менторська підтримка і реальні проєкти — це те, що допомогло."</div>
+        <div style="color:var(--muted);font-size:13px;margin-top:8px">— Марія</div>
+      </div>
+      <div class="test">
+        <div style="font-weight:800">"Гнучкий графік дозволив поєднувати роботу й навчання."</div>
+        <div style="color:var(--muted);font-size:13px;margin-top:8px">— Сергій</div>
+      </div>
+    </section>
+
+    <section id="prices" class="pricing fade-in-up">
+      <div class="plan">
+        <div style="font-weight:900">Базовий — 300$</div>
+        <div style="color:var(--muted);margin-top:8px">Доступ на курс, матеріали, чат підтримки</div>
+      </div>
+      <div class="plan recommended">
+        <div style="font-weight:900">Pro — 650$</div>
+        <div style="color:var(--muted);margin-top:8px">Проєкт, менторство, працевлаштування</div>
+      </div>
+      <div class="plan">
+        <div style="font-weight:900">Інтенсив — 1200$</div>
+        <div style="color:var(--muted);margin-top:8px">Індивідуально, швидкий запуск кар'єри</div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact fade-in-up">
+      <div class="form">
+        <h3 style="margin:0">Залишити заявку</h3>
+        <p style="color:var(--muted);margin:6px 0 12px">Ми зв'яжемося протягом робочого дня</p>
+        <input id="name" placeholder="Ім'я" style="padding:10px;border-radius:8px;border:1px solid rgba(6,10,30,0.04)">
+        <input id="phone" placeholder="Телефон" style="padding:10px;border-radius:8px;border:1px solid rgba(6,10,30,0.04);margin-top:8px">
+        <select id="course" style="padding:10px;border-radius:8px;border:1px solid rgba(6,10,30,0.04);margin-top:8px">
+          <option value="">Оберіть курс</option>
+          <option>Веб-розробка (Frontend)</option>
+          <option>UI/UX Дизайн</option>
+          <option>Digital-маркетинг</option>
+        </select>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button class="btn primary" onclick="submitForm()">Надіслати</button>
+          <button class="btn ghost" onclick="phoneCall()">Попросити дзвінок</button>
+        </div>
+        <div id="sent" style="margin-top:10px;display:none;color:green;font-weight:800">Дякуємо! Ми вам зателефонуємо.</div>
+      </div>
+      <div class="map">
+        <!-- Inline SVG map placeholder -->
+        <svg width="220" height="140" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map">
+          <rect width="100%" height="100%" rx="8" fill="#eef7ff"/>
+          <text x="50%" y="50%" text-anchor="middle" fill="#024" font-size="14">Карта (демо)</text>
+        </svg>
+        <div style="margin-top:10px;color:var(--muted)">Адреса: вул. Навчальна, 10, [Місто]</div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="small">© LearnLab — демонстраційний сайт. Використовуйте для презентацій</div>
+      <div class="small">Підготовано для швидкого старту</div>
+    </footer>
+  </main>
+</div>
+
+<script>
+// Intersection Observer for fade-in
+document.addEventListener("DOMContentLoaded", function() {
+  const els = document.querySelectorAll('.fade-in-up');
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(ent=>{
+      if(ent.isIntersecting){ ent.target.classList.add('visible'); }
+    });
+  }, {threshold:0.12});
+  els.forEach(e=>obs.observe(e));
+});
+
+function showPrograms(){document.getElementById('courses').scrollIntoView({behavior:'smooth'})}
+function submitForm(){document.getElementById('sent').style.display='block'; setTimeout(()=>document.getElementById('sent').style.display='none',4000)}
+function phoneCall(){alert('Дякуємо! Наш менеджер передзвонить найближчим часом.')}
+</script>
+</body>
+</html>
